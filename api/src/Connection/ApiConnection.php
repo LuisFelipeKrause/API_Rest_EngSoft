@@ -12,7 +12,8 @@
                 die("Connection failed".mysqli_connect_error());
             }
             else{
-                return $pdo;
+                echo "Sucesso na conexão";
+                return $conn;
             }
         }
     }

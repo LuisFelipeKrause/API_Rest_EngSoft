@@ -1,10 +1,16 @@
 <?php
     class UserModel {
-        function listarCadastros() {
-            //Deve fazer a consulta dos dados
+        function cadastrarItem($nome, $cpf, $email, $senha){
+            //Insere o novo item no BD
             require_once './Connection/ApiConnection.php';
             $conn = new ApiConnection();
-            $resultadoConn = $conn->connect();
+            $conn = $conn->connect();
+            $query = "INSERT INTO usuarios (nome, cpf, email, senha) VALUES ($nome, $cpf, $email, $senha)";
+            $resultado = mysqli_query($conn, $query);
+            
+            echo "Inserção feita com sucesso";
+            $conn->close();
+            return $resultado;
         }
     }
 ?>

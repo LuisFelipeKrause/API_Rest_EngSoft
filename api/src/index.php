@@ -11,7 +11,7 @@
             case "api":
                 require_once './Model/UserModel.php';
                 $user = new UserModel();
-                $resultado = $user->listarCadastros();
+                $resultado = $user->cadastrarItem(NULL, NULL, NULL, NULL);
             break;
             
             default: 
