@@ -6,11 +6,15 @@
             $conn = new ApiConnection();
             $conn = $conn->connect();
             $query = "INSERT INTO usuarios (nome, cpf, email, senha) VALUES ($nome, $cpf, $email, $senha)";
+    
             $resultado = mysqli_query($conn, $query);
             
             echo "Inserção feita com sucesso";
             $conn->close();
-            return $resultado;
+
+            $result = mysqli_fetch_assoc($resultado);
+
+            return $result;
         }
     }
 ?>

@@ -9,9 +9,9 @@
     if ($method == "GET"){
         switch($url[3]){
             case "api":
-                require_once './Model/UserModel.php';
-                $user = new UserModel();
-                $resultado = $user->cadastrarItem(NULL, NULL, NULL, NULL);
+                require_once './Controller/UserController.php';
+                $user = new UserController();
+                $resultado = $user->cadastrar(NULL);
             break;
             
             default: 
