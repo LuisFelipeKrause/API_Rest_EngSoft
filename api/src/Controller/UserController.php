@@ -2,7 +2,7 @@
     class UserController {
         //Classe com os métodos http da api
         function cadastrar($jsonObject){
-            require_once './Model/UserModel.php';
+            require_once './src/Model/UserModel.php';
             $user = new UserModel();
 
             $data = json_decode($jsonObject, true);
@@ -27,7 +27,7 @@
         }
 
         function listarItens(){
-            require_once './Model/UserModel.php';
+            require_once './src/Model/UserModel.php';
             $user = new UserModel();
 
             $itens = $user->listarItens();

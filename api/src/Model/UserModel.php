@@ -1,7 +1,7 @@
 <?php
     class UserModel {
         function cadastrarItem($nome, $cpf, $email, $senha){
-            require_once './Connection/ApiConnection.php';
+            require_once './src/Connection/ApiConnection.php';
             $conn = new ApiConnection();
             $conn = $conn->connect();
             //$query = "INSERT INTO usuarios (nome, cpf, email, senha) VALUES ('$nome', '$cpf', '$email', '$senha')";
@@ -17,7 +17,7 @@
         }
 
         function listarItens(){
-            require_once './Connection/ApiConnection.php';
+            require_once './src/Connection/ApiConnection.php';
             $conn = new ApiConnection();
             $conn = $conn->connect();
 

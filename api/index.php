@@ -6,13 +6,14 @@
 
     $url = explode('/', $url);
 
+
     if ($method == "GET"){
         switch($url[3]){
             case "api":
-                require_once './Controller/UserController.php';
+                require_once './src/Controller/UserController.php';
                 $user = new UserController();
-                $resultado = $user->cadastrar(NULL);
                 
+                $resultado = $user->cadastrar(NULL);
                 $listaItens = $user->listarItens();
             break;
             
