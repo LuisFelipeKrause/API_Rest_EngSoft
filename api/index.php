@@ -7,7 +7,7 @@
     $url = explode('/', $url);
 
 
-    if ($method == "GET"){
+    if ($method == "POST"){
         switch($url[3]){
             case "api":
                 require_once './src/Controller/UserController.php';

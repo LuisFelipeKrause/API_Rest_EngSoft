@@ -4,16 +4,14 @@
             require_once './src/Connection/ApiConnection.php';
             $conn = new ApiConnection();
             $conn = $conn->connect();
-            //$query = "INSERT INTO usuarios (nome, cpf, email, senha) VALUES ('$nome', '$cpf', '$email', '$senha')";
-            $query = "SELECT * FROM usuarios";
+            $query = "INSERT INTO usuarios (nome, cpf, email, senha) VALUES ('$nome', '$cpf', '$email', '$senha')";
+            //$query = "SELECT * FROM usuarios";
 
             $resultado = mysqli_query($conn, $query);
-            $result = mysqli_fetch_assoc($resultado);
 
-            echo "Inserção feita com sucesso";
             $conn->close();
 
-            return $result;
+            return $resultado;
         }
 
         function listarItens(){
