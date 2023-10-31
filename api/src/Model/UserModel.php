@@ -5,7 +5,6 @@
             $conn = new ApiConnection();
             $conn = $conn->connect();
             $query = "INSERT INTO usuarios (nome, cpf, email, senha) VALUES ('$nome', '$cpf', '$email', '$senha')";
-            //$query = "SELECT * FROM usuarios";
 
             $resultado = mysqli_query($conn, $query);
 
