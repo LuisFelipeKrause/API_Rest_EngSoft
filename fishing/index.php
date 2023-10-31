@@ -1,6 +1,5 @@
 <?php
     $url = $_SERVER["REQUEST_URI"];
-    var_dump($url);
 
     switch ($url) {
         case '/Docs/API_Rest_EngSoft/fishing/':

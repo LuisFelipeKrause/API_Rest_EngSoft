@@ -1,7 +1,6 @@
 <?php
     class ApiConnection {
         function connect(){
-            //Faz a conexão no banco
             $host = "localhost";
             $dbname = "loginRU";
             $password = "";

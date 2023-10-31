@@ -1,6 +1,5 @@
 <?php
     class UserController {
-        //Classe com os métodos http da api
         function cadastrar($jsonObject){
             require_once './src/Model/UserModel.php';
             $user = new UserModel();

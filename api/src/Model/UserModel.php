@@ -9,7 +9,6 @@
             $resultado = mysqli_query($conn, $query);
 
             $conn->close();
-
             return $resultado;
         }
 
