@@ -1,7 +1,8 @@
 .main {
     margin: 0;
     font-family: 'Times New Roman', Times, serif;
-    display: flex;
+    display: inline-block;
+    align-items: center;
 }
 
 .main-content-cadastro form {
@@ -9,6 +10,11 @@
     display: inline-block;
     padding: 10px 8px 10px 8px;
 }
+
+.main-content-cadastro {
+    margin-left: 90px;
+}
+
 
 .main-content-cadastro h2 {
     text-align: center;
@@ -19,4 +25,34 @@
 .main-content-cadastro button {
     margin-left: 50px;
     height: 30px;
+}
+
+.main-content-listagem {
+    margin-top: 40px;
+    margin-left: 400px;
+}
+
+.main-content-listagem button {
+    height: 30px;
+    margin-bottom: 20px;
+    margin-left: 175px;
+}
+
+.main-content-listagem th, td{
+    border: 2px solid black;
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.main-content-listagem th {
+    font-size: larger;
+}
+
+.main-content-listagem form {
+    justify-content: center;
+}
+
+.lista-itens {
+    border-collapse: collapse;
 }
