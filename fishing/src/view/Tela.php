@@ -4,10 +4,9 @@
     if (isset($_POST["btn-cadastrar"])){
         $user = new UserController();
         
-        $resultado = $user->cadastrarItem("cadastro", $_POST["nome"], $_POST["cpf"], $_POST["email"], $_POST["senha"]);
+        $resultado = $user->cadastrarItem($_POST["nome"], $_POST["cpf"], $_POST["email"], $_POST["senha"]);
         echo "Item ".$resultado." cadastrado!";
     }
-    //Fazer if para listagem de itens
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +39,36 @@
             </form>
         </div>
         <div class="main-content-listagem">
+            <form method="POST">
+                <button name="btn-lista-itens">Listar Itens</button>
+                <table class="lista-itens">
+                    <?php
+                        if (isset($_POST["btn-lista-itens"])){
+                            echo "<tr>
+                                <th>Nome</th>
+                                <th>CPF</th>
+                                <th>E-mail</th>
+                                <th>Senha</th>
+                            </tr>";
 
+                            require_once '../controller/UserController.php';
+                            $user = new UserController();
+                            
+                            $itens = $user->listarItens();
+                            $dados = json_decode($itens, true);
+
+                            foreach ($dados as $registro){
+                                echo "<tr>
+                                <td>".$registro['nome']."</td>
+                                <td>".$registro['cpf']."</td>
+                                <td>".$registro['email']."</td>
+                                <td>".$registro['senha']."</td>
+                                </tr>";
+                            }
+                        }
+                    ?>
+                </table>
+            </form>
         </div>
     </div>
 </body>

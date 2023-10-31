@@ -4,8 +4,8 @@
             require_once './src/Connection/ApiConnection.php';
             $conn = new ApiConnection();
             $conn = $conn->connect();
-            $query = "INSERT INTO usuarios (nome, cpf, email, senha) VALUES ('$nome', '$cpf', '$email', '$senha')";
 
+            $query = "INSERT INTO usuarios (nome, cpf, email, senha) VALUES ('$nome', '$cpf', '$email', '$senha')";
             $resultado = mysqli_query($conn, $query);
 
             $conn->close();
@@ -13,7 +13,7 @@
             return $resultado;
         }
 
-        function listarItens(){
+        function listar(){
             require_once './src/Connection/ApiConnection.php';
             $conn = new ApiConnection();
             $conn = $conn->connect();

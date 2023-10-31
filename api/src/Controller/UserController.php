@@ -30,7 +30,7 @@
             require_once './src/Model/UserModel.php';
             $user = new UserModel();
 
-            $itens = $user->listarItens();
+            $itens = $user->listar();
 
             return $itens;
         }
