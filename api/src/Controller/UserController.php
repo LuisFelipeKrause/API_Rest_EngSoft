@@ -27,7 +27,12 @@
         }
 
         function listarItens(){
+            require_once './Model/UserModel.php';
+            $user = new UserModel();
 
+            $itens = $user->listarItens();
+
+            return $itens;
         }
     }
 ?>

@@ -12,6 +12,8 @@
                 require_once './Controller/UserController.php';
                 $user = new UserController();
                 $resultado = $user->cadastrar(NULL);
+                
+                $listaItens = $user->listarItens();
             break;
             
             default: 
