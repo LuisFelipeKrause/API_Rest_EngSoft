@@ -1,11 +1,13 @@
 <?php
     require_once "../controller/UserController.php";
 
-    if ($_POST){
+    if (isset($_POST["btn-cadastrar"])){
         $user = new UserController();
         
-        $resultado = $user->cadastrarItem($_POST["nome"], $_POST["cpf"], $_POST["email"], $_POST["senha"]);
+        $resultado = $user->cadastrarItem("cadastro", $_POST["nome"], $_POST["cpf"], $_POST["email"], $_POST["senha"]);
+        echo "Item ".$resultado." cadastrado!";
     }
+    //Fazer if para listagem de itens
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +36,7 @@
                 <label for="nome">Senha</label>
                 <input type="password" placeholder="Digite sua senha..." name="senha" required>
 
-                <button>Cadastrar</button>
+                <button name="btn-cadastrar">Cadastrar</button>
             </form>
         </div>
         <div class="main-content-listagem">
