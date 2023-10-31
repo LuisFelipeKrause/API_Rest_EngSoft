@@ -5,7 +5,10 @@
         $user = new UserController();
         
         $resultado = $user->cadastrarItem($_POST["nome"], $_POST["cpf"], $_POST["email"], $_POST["senha"]);
-        echo "Item ".$resultado." cadastrado!";
+        if ($resultado)
+            echo "Item cadastrado com sucesso!";
+        else
+            echo "Não foi possível cadastrar o item...";
     }
 ?>
 
@@ -43,19 +46,19 @@
                 <button name="btn-lista-itens">Listar Itens</button>
                 <table class="lista-itens">
                     <?php
-                        if (isset($_POST["btn-lista-itens"])){
+                        require_once '../controller/UserController.php';
+                        $user = new UserController();
+                        
+                        $itens = $user->listarItens();
+                        $dados = json_decode($itens, true);
+
+                        if (isset($_POST["btn-lista-itens"]) && $dados){
                             echo "<tr>
                                 <th>Nome</th>
                                 <th>CPF</th>
                                 <th>E-mail</th>
                                 <th>Senha</th>
                             </tr>";
-
-                            require_once '../controller/UserController.php';
-                            $user = new UserController();
-                            
-                            $itens = $user->listarItens();
-                            $dados = json_decode($itens, true);
 
                             foreach ($dados as $registro){
                                 echo "<tr>
@@ -66,6 +69,8 @@
                                 </tr>";
                             }
                         }
+                        elseif (isset($_POST["btn-lista-itens"]) && !$dados)
+                            echo "Não há nenhum registro no Banco de Dados";
                     ?>
                 </table>
             </form>
